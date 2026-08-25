@@ -1,0 +1,174 @@
+/* ===================================================================
+   THORNBOUND — Design tokens
+   Derived from Section 18 of the design doc: ink/parchment base,
+   gold-line filigree, per-House accent system, dossier/ledger UI.
+
+   ✎ HOW TO CUSTOMIZE THIS SITE
+   Every page loads this file first. Change a value here and it
+   updates everywhere automatically.
+     - Colors:  edit the hex values under "Base palette" / "House accents"
+     - Fonts:   swap the names in --font-display / --font-body / --font-ui
+                (remember to also update the Google Fonts <link> in each
+                page's <head> if you change families)
+     - Shapes:  --radius controls corner rounding site-wide (0 = sharp)
+   Page-specific look (hero layout, card grids, etc.) lives in each
+   page's own CSS file (home.css, quiz.css, etc.) — look for "✎ CUSTOMIZE"
+   comments marking the purely decorative bits that are safe to rip out.
+   =================================================================== */
+
+:root {
+  /* Base palette */
+  --ink: #1C1A18;
+  --ink-soft: #2A2723;
+  --parchment: #EDE3D0;
+  --parchment-dim: #E0D4BC;
+  --gold: #B8964F;
+  --gold-bright: #D4B571;
+
+  /* Text on parchment / on ink */
+  --text-on-parchment: #2A2420;
+  --text-on-parchment-muted: #6B5F4F;
+  --text-on-ink: #E8DFC9;
+  --text-on-ink-muted: #A89C82;
+
+  /* House accents (border/tint colors — Section 18) */
+  --house-aldreth-a: #F4EFE0;   /* ivory */
+  --house-aldreth-b: #C9A646;   /* gold */
+  --house-vantressor-a: #6B1F2A; /* burgundy */
+  --house-vantressor-b: #9C9C9C; /* silver */
+  --house-rennmark-a: #2E2E2E;  /* charcoal */
+  --house-rennmark-b: #1F3A5F;  /* deep blue */
+  --house-dansworth-a: #E8D77A; /* pale yellow */
+  --house-dansworth-b: #4F8F7C; /* sea-green */
+  --house-voss-a: #5A6B7D;      /* slate-blue */
+  --house-voss-b: #6B5A4A;      /* muted brown */
+  --house-dorian-a: #1E5C43;    /* emerald */
+  --house-dorian-b: #0F0F0F;    /* black */
+  --house-dorian-c: #B8964F;    /* aged gold */
+
+  /* Type */
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-body: 'EB Garamond', 'Source Serif Pro', serif;
+  --font-ui: 'Inter', 'Public Sans', sans-serif;
+
+  /* Layout */
+  --radius: 2px; /* deliberately near-sharp — ledger pages, not app cards */
+  --border-hairline: 1px solid rgba(184, 150, 79, 0.35);
+  --shadow-page: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+  --max-width: 1100px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--text-on-ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+  color: var(--text-on-ink);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: 0.04em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--gold-bright); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Gold-line filigree divider */
+.divider {
+  border: none;
+  border-top: var(--border-hairline);
+  margin: 3rem 0;
+}
+
+.divider--ornate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  color: var(--gold);
+}
+.divider--ornate::before,
+.divider--ornate::after {
+  content: '';
+  flex: 1;
+  border-top: var(--border-hairline);
+}
+
+/* Wax-seal button / interactive affordance — the signature element */
+.seal-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-on-ink);
+  background: transparent;
+  border: 1px solid var(--gold);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+.seal-button::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  transition: background 0.25s ease;
+}
+.seal-button:hover,
+.seal-button:focus-visible {
+  background: var(--gold);
+  color: var(--ink);
+}
+.seal-button:hover::before,
+.seal-button:focus-visible::before {
+  background: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

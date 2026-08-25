@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compatibility Reading — Thornbound</title>
+<meta name="description" content="Which Thornbound route, house, and discipline are you most compatible with?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+<nav class="ledger-nav">
+  <div class="ledger-nav__inner">
+    <a href="index.html" class="ledger-nav__mark">THORN<span>BOUND</span></a>
+    <button class="ledger-nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="ledger-nav__tabs" id="navTabs">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quiz.html" aria-current="page">Compatibility</a></li>
+      <li><a href="demo.html">The scene</a></li>
+      <li><a href="houses.html">The houses</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="codex.html">Codex</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="quiz-header container">
+  <p class="eyebrow">A compatibility reading</p>
+  <h1>Which route are you?</h1>
+  <p class="quiz-intro">Eight questions. Answer as {{user}} would — or as you would, if you're honest about the difference.</p>
+</header>
+
+<div class="quiz-progress">
+  <div class="quiz-progress__track">
+    <div class="quiz-progress__fill" id="progressFill"></div>
+  </div>
+  <p class="quiz-progress__label" id="progressLabel">Entry 1 of 8</p>
+</div>
+
+<main class="quiz-stage" id="quizStage">
+  <!-- populated by js/quiz.js -->
+</main>
+
+<footer class="site-footer">
+  Thornbound — a personal project.
+</footer>
+
+<script src="data/quiz-data.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

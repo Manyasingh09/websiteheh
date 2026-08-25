@@ -1,0 +1,157 @@
+/* ===================================================================
+   THORNBOUND — Homepage
+   =================================================================== */
+
+.hero {
+  position: relative;
+  padding: 7rem 0 5rem;
+  text-align: center;
+  overflow: hidden;
+  /* ✎ CUSTOMIZE: swap this gradient for a hero image/texture if you want one —
+     e.g. background: url('../assets/hero-bg.jpg') center/cover, var(--ink); */
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(184, 150, 79, 0.10), transparent 60%),
+    var(--ink);
+}
+
+.hero__inner { position: relative; z-index: 2; }
+
+.hero__logline {
+  max-width: 640px;
+  margin: 1.5rem auto 2.5rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-on-ink-muted);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.seal-button--ghost {
+  border-color: rgba(184, 150, 79, 0.5);
+  color: var(--text-on-ink-muted);
+}
+.seal-button--ghost:hover { color: var(--ink); }
+
+/* ✎ CUSTOMIZE: faint decorative seal, pure CSS, no image asset needed.
+   Delete this whole block (and the .hero__seal div in the HTML) if you'd
+   rather drop in your own illustration/sigil PNG here instead. */
+.hero__seal {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(184, 150, 79, 0.15);
+  border-radius: 50%;
+  z-index: 1;
+}
+.hero__seal::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border: 1px solid rgba(184, 150, 79, 0.1);
+  border-radius: 50%;
+}
+
+.premise {
+  padding: 3rem 0 1rem;
+  max-width: 720px;
+}
+.premise__mark { margin-bottom: 0.75rem; }
+.premise__text {
+  font-size: 1.15rem;
+  color: var(--text-on-ink-muted);
+}
+
+.section-head { margin-bottom: 2.5rem; }
+.section-head .eyebrow { margin-bottom: 0.5rem; }
+.section-head h2 { margin: 0; }
+
+.explore { padding: 2rem 0 3rem; }
+.explore__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 700px) {
+  .explore__grid { grid-template-columns: 1fr; }
+}
+
+.dossier-card {
+  display: block;
+  background: var(--ink-soft);
+  border: var(--border-hairline);
+  padding: 2rem;
+  color: var(--text-on-ink);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.dossier-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.dossier-card__glyph {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.dossier-card h3 { margin-bottom: 0.6rem; font-size: 1.25rem; }
+.dossier-card p {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-on-ink-muted);
+  margin-bottom: 1.25rem;
+}
+.dossier-card__cta {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.ambitions { padding: 1rem 0 4rem; }
+.ambitions__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 760px) {
+  .ambitions__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.ambition-stamp {
+  border: 1px solid var(--gold);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  position: relative;
+}
+/* ✎ CUSTOMIZE: double-border "stamped seal" effect — remove this ::before
+   for a plain single-border card, or replace with a background icon/glyph. */
+.ambition-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(184, 150, 79, 0.3);
+  pointer-events: none;
+}
+.ambition-stamp h3 {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+.ambition-stamp p {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-on-ink-muted);
+  margin: 0;
+}

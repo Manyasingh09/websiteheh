@@ -1,0 +1,94 @@
+/* ===================================================================
+   THORNBOUND — Navigation
+   "Tabs on a closed ledger cover" per Section 18 Main Menu spec.
+   =================================================================== */
+
+.ledger-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  border-bottom: var(--border-hairline);
+}
+
+.ledger-nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.ledger-nav__mark {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  color: var(--text-on-ink);
+}
+.ledger-nav__mark span { color: var(--gold-bright); }
+
+.ledger-nav__tabs {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ledger-nav__tabs a {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-on-ink-muted);
+  padding: 0.6rem 0.9rem;
+  border-bottom: 2px solid transparent;
+}
+
+.ledger-nav__tabs a:hover,
+.ledger-nav__tabs a[aria-current="page"] {
+  color: var(--text-on-ink);
+  border-bottom-color: var(--gold);
+  text-decoration: none;
+}
+
+.ledger-nav__toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--text-on-ink);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 760px) {
+  .ledger-nav__toggle { display: block; }
+  .ledger-nav__tabs {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--ink-soft);
+    border-bottom: var(--border-hairline);
+    display: none;
+    padding: 0.5rem 0;
+  }
+  .ledger-nav__tabs.is-open { display: flex; }
+  .ledger-nav__tabs a { padding: 0.9rem var(--gutter); border-bottom: 1px solid rgba(184,150,79,0.15); }
+}
+
+footer.site-footer {
+  border-top: var(--border-hairline);
+  padding: 2.5rem var(--gutter);
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--text-on-ink-muted);
+}

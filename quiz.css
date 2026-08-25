@@ -1,0 +1,120 @@
+/* ===================================================================
+   THORNBOUND — Quiz page
+   =================================================================== */
+
+.quiz-header {
+  padding: 4rem 0 1rem;
+  text-align: center;
+}
+.quiz-header .eyebrow { margin-bottom: 0.5rem; }
+.quiz-header p.quiz-intro {
+  max-width: 560px;
+  margin: 1rem auto 0;
+  color: var(--text-on-ink-muted);
+  font-style: italic;
+}
+
+.quiz-progress {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 0 var(--gutter);
+}
+.quiz-progress__track {
+  height: 3px;
+  background: rgba(184, 150, 79, 0.15);
+  position: relative;
+}
+.quiz-progress__fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.quiz-progress__label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-on-ink-muted);
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+.quiz-stage {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem var(--gutter) 6rem;
+  text-align: center;
+}
+
+.quiz-question {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiz-answer {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  background: var(--ink-soft);
+  border: var(--border-hairline);
+  color: var(--text-on-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+.quiz-answer:hover,
+.quiz-answer:focus-visible {
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+
+/* ✎ CUSTOMIZE: the small wax-seal dot before each answer — remove the
+   span in quiz.js's answersHtml template if you'd rather not have it */
+.quiz-answer__seal {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  transition: background 0.2s ease;
+}
+.quiz-answer:hover .quiz-answer__seal,
+.quiz-answer:focus-visible .quiz-answer__seal {
+  background: var(--gold);
+}
+
+/* Result screen */
+.quiz-result__name {
+  font-size: 2rem;
+  margin: 0.5rem 0 0.4rem;
+}
+.quiz-result__house {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+}
+.quiz-result__tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-on-ink-muted);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+}
+.quiz-result__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

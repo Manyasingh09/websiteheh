@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thornbound — an otome villainess game</title>
+<meta name="description" content="You are not the heroine. You are the woman the story was written to destroy. Thornbound is an otome villainess visual novel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<nav class="ledger-nav">
+  <div class="ledger-nav__inner">
+    <a href="index.html" class="ledger-nav__mark">THORN<span>BOUND</span></a>
+    <button class="ledger-nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="ledger-nav__tabs" id="navTabs">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="quiz.html">Compatibility</a></li>
+      <li><a href="demo.html">The scene</a></li>
+      <li><a href="houses.html">The houses</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="codex.html">Codex</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero__inner">
+    <p class="eyebrow">An otome villainess visual novel</p>
+    <h1>Thornbound</h1>
+    <p class="hero__logline">You are not the heroine. You are the woman the story was written to destroy —<br class="hero__br">
+    and you intend to rewrite the ending, if the ending will even let you choose one.</p>
+    <div class="hero__actions">
+      <a href="quiz.html" class="seal-button">Find your route</a>
+      <a href="demo.html" class="seal-button seal-button--ghost">Read the first scene</a>
+    </div>
+  </div>
+  <div class="hero__seal" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <section class="premise container">
+    <div class="premise__mark eyebrow">The premise</div>
+    <p class="premise__text">
+      The world runs on an invisible script: a "canon" romance where a sweet, ordinary heroine
+      wins the prince's heart, while the noble fiancée — you — is humiliated, disinherited, exiled,
+      or executed by the finale. You are the eldest daughter of a declining noble house, betrothed
+      since childhood to the Crown Prince. You know, in your bones, how this story is supposed to
+      end for someone like you. Thornbound is about clawing a different ending out of a narrative
+      that keeps trying to correct itself back to your doom.
+    </p>
+  </section>
+
+  <hr class="divider--ornate container">
+
+  <section class="explore container">
+    <div class="section-head">
+      <p class="eyebrow">Explore the world</p>
+      <h2>Four ways into the court</h2>
+    </div>
+
+    <div class="explore__grid">
+
+      <a class="dossier-card" href="quiz.html">
+        <span class="dossier-card__glyph" aria-hidden="true">◈</span>
+        <h3>Which route are you?</h3>
+        <p>A compatibility reading: your house, your bound discipline, and the love interest
+        whose story runs closest to your own instincts.</p>
+        <span class="dossier-card__cta">Take the reading →</span>
+      </a>
+
+      <a class="dossier-card" href="demo.html">
+        <span class="dossier-card__glyph" aria-hidden="true">✒</span>
+        <h3>The first scene</h3>
+        <p>A dossier-styled dialogue mockup from Act 1 — see the discipline-tagged choice
+        system that runs underneath every conversation.</p>
+        <span class="dossier-card__cta">Open the scene →</span>
+      </a>
+
+      <a class="dossier-card" href="houses.html">
+        <span class="dossier-card__glyph" aria-hidden="true">⚜</span>
+        <h3>The Great Houses</h3>
+        <p>Six houses, bound by debt, marriage, and magical pedigree. A family tree of who
+        owes whom — and a map of the Academy and the Ivory Palace.</p>
+        <span class="dossier-card__cta">Open the archive →</span>
+      </a>
+
+      <a class="dossier-card" href="journal.html">
+        <span class="dossier-card__glyph" aria-hidden="true">✎</span>
+        <h3>Journal &amp; Codex</h3>
+        <p>A flip-through of character-voiced pages, alongside the in-world Codex of Bound
+        Craft, court law, and the "Unspoken."</p>
+        <span class="dossier-card__cta">Turn the pages →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <hr class="divider--ornate container">
+
+  <section class="ambitions container">
+    <div class="section-head">
+      <p class="eyebrow">The Ambition system</p>
+      <h2>Choose what you're willing to become</h2>
+    </div>
+    <div class="ambitions__grid">
+      <div class="ambition-stamp"><h3>Restoration</h3><p>Rebuild House Vantressor's finances and standing.</p></div>
+      <div class="ambition-stamp"><h3>The Throne</h3><p>Position herself for real political power.</p></div>
+      <div class="ambition-stamp"><h3>Reckoning</h3><p>Settle accounts with whoever engineered her family's decline.</p></div>
+      <div class="ambition-stamp"><h3>Departure</h3><p>Get out, discharge every obligation, disappear from court life.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Thornbound — a personal project. Design doc v4.
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
